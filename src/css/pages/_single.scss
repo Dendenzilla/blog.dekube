@@ -1,0 +1,75 @@
+article{
+    max-width: 800px;
+    margin: 4rem auto 0 auto;
+    color: var(--smooth-white);
+    & h1 {
+        font-size: 3rem;
+        margin: 1rem 0 2rem;
+    }
+    & p{
+        padding: 1rem;
+    }
+}
+// CODE BLOCK STYLE
+.enlighter-default{
+    &.enlighter-t-monokai {
+        background-color: #212121;
+    }
+    & span{
+        font-family: 'Consolas', monospace !important;
+    }
+    max-width: 100%;
+    overflow: visible !important;
+    margin: 3rem auto 0 auto !important;
+    padding: 1rem !important;
+    border-radius: var(--border-radius-tiny);
+    margin: auto;
+    font-size: .8rem !important;
+    & .enlighter-toolbar {
+        bottom: 10px;
+        top: unset !important;
+    }
+    & span.codeName{
+        text-transform: uppercase;
+        position: absolute;
+        top: -1.4rem;
+        right: 2rem;
+        background: var(--codeblock-background-darker);
+        padding: 0.2rem 0.5rem;
+        border-radius: 3px 3px 0 0;
+        font-size: 1rem;
+        color: var(--codeblock-codeName-color);
+        user-select: none;
+    }
+    & .enlighter-g1{
+        font-weight: normal !important;
+    }
+    & .enlighter-x11 {
+        color: #fddb93 !important;
+    }
+    & .enlighter-x12 {
+        font-style: normal !important;
+    }
+}
+.enlighter-btn-copy::before {
+    content: "copied!";
+    position: absolute;
+    right: -100%;
+    top: 0;
+    color: white;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+.enlighter-btn-copy.alert--copied::before {
+    animation: copyopacity 200ms ;
+}
+// END OF CODE BLOCK STYLE
+// Animation on "copy" button click
+@keyframes copyopacity{
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+.enlighter-btn-website, .enlighter-btn-raw, .enlighter-btn-window {
+    display: none !important;
+}

@@ -1,0 +1,136 @@
+[data-theme="dark"] {
+    --background-color: #171717;
+    --light-background: #38525f;
+    --text-color: #f6f5f7;
+    --deep-text-color: #547b8f;
+    --deepest-text-color:#233944;
+    --text-selection-background: rgba(255, 77, 41, 0.774);
+    --border-radius-tiny:.2rem;
+    --codeblock-background:#272822;
+    --codeblock-background-darker:#212121;
+    --codeblock-codeName-color:#53554b;
+    & ::selection{
+        color:var(--text-selection-color);
+        background:var(--text-selection-background);
+    }
+}
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+h1, h2, h3, h4, h5, h6{
+  font-family: 'Roboto', sans-serif;
+}
+h2{
+  font-size: clamp(1rem, 1.5rem, 2rem);
+}
+.container{
+    max-width: 50rem;
+    margin: auto;
+}
+kbd{
+    border:1px solid #333333;
+    padding: .1rem;
+    border-radius: 4px;
+}
+// LOADER
+.lds-facebook {
+    display: inline-block;
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 30vh;
+    &.hidden{
+        display: none;
+    }
+  }
+  .lds-facebook div {
+    display: inline-block;
+    position: absolute;
+    left: 8px;
+    width: 16px;
+    background: #fff;
+    animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+  }
+  .lds-facebook div:nth-child(1) {
+    left: 8px;
+    animation-delay: -0.24s;
+  }
+  .lds-facebook div:nth-child(2) {
+    left: 32px;
+    animation-delay: -0.12s;
+  }
+  .lds-facebook div:nth-child(3) {
+    left: 56px;
+    animation-delay: 0;
+  }
+  @keyframes lds-facebook {
+    0% {
+      top: 8px;
+      height: 64px;
+    }
+    50%, 100% {
+      top: 24px;
+      height: 32px;
+    }
+  }
+// END LOADER
+// TECHNOS HOVER EFFECT FOR PAGES OTHER THAN POSTS
+.technos {
+  display: flex;
+  align-items: center;
+  & a{
+    text-decoration: none;
+    display: inline-block !important;
+    width: auto !important;
+  }
+  &> * {
+      margin-right: .5rem;
+      cursor:pointer;
+  }
+  & span{
+    color:var(--deep-text-color);
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 1rem;
+  }
+  & i{
+    display: inline-block;
+    color: var(--deep-text-color);
+    font-size: 1.4rem;
+  }
+  
+}
+// END OF TECHNOS HOVER EFFECT FOR PAGES OTHER THAN POSTS
+i:hover, span.emphasis{
+  &.css{
+    color:#27a0d4;
+  }
+  &.html{
+    color:#e25f32;
+  }
+  &.js{
+    color:#EAD41C;
+  }
+  &.wordpress{
+    color:#1f6f93;
+  }
+}
+span:hover, span.emphasis{
+  &.tidbit{
+    background:conic-gradient(at bottom left, deeppink, cyan);
+    background-clip: text;
+    color:transparent;
+  }
+  &.article{
+    background:conic-gradient(at top right, rgb(6, 148, 6), rgb(0, 153, 255));
+    background-clip: text;
+    color:transparent;
+  }
+  background-size: 100% 100px;
+  background-repeat: no-repeat;
+  color:transparent;
+}

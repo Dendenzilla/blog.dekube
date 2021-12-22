@@ -1,0 +1,181 @@
+// SWITCH FROM FLEX TO GRID
+.display--switch{
+    text-align: right;
+    padding: 1rem 2rem 0 0;
+    color: darken($secondary-color, 15%);
+    user-select: none;
+    & i{
+        cursor: pointer;
+    }
+    & i+i{
+        padding-left: .2rem;
+    }
+    & i.selected{
+        cursor:default;
+        color: white;
+    }
+}
+.posts{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem 2rem;
+    visibility: hidden;
+    // Link to single.php
+    & a{
+        text-decoration: none;
+        color: inherit;
+        display: block;
+        width: 100%;
+    }
+    // IF SQUARE DISPLAY IS SELECTED
+    &.squared{
+        margin: 0 auto;
+        display: grid;
+        grid-gap: 2rem 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+        & .post{
+            flex-direction: column;
+            min-height: 100%;
+            padding-bottom: 0;
+            &__teaser{
+                margin-left: 0;
+                & h2{
+                    padding-bottom: .5rem;
+                    text-align: center;
+                    font-size: 1.2rem;
+                    line-height: initial;
+                    color: var(--text-color);
+                }
+            }
+        }
+    }
+    &.reveal{
+        visibility: visible;
+    }
+    // REGULAR DISPLAY (LINES)
+    & .post{
+        width: 100%;
+        border-radius: .2rem;
+        position: relative;
+        transition: .1s all ease-in-out;
+        padding-bottom: 1.4rem;
+        &__teaser{
+            color:var(--smooth-white);
+            font-size: 1.2rem;
+            & h2{
+                font-weight: 600;
+            }
+            & p.post__excerpt{
+                font-weight: 400;
+                background-image: linear-gradient(90deg, #FF4C29, #630437);
+                background-size: 0% 3px;
+                background-repeat: no-repeat;
+                background-position:left bottom;
+                display: inline;
+                transition: background-size 300ms ease;
+            }
+        }
+        &:hover{
+            & h2{
+                color: #FF4C29;
+            }
+            & p.post__excerpt{
+                background-size:100% 3px;
+            }
+            // & span{
+            //     &.tidbit{
+            //         background:conic-gradient(at bottom left, deeppink, cyan);
+            //         background-clip: text;
+            //     }
+            //     &.article{
+            //         background:conic-gradient(at top right, rgb(6, 148, 6), rgb(0, 153, 255));
+            //         background-clip: text;
+            //     }
+            //     background-size: 100% 100px;
+            //     background-repeat: no-repeat;
+                
+            //     color:transparent;
+            // }
+            // & i.css{
+            //     color:#27a0d4;
+            // }
+            // & i.html{
+            //     color:#e25f32;
+            // }
+            // & i.js{
+            //     color:#EAD41C;
+            // }
+            // & i.wordpress{
+            //     color:#1f6f93;
+            // }
+        }
+    }
+}
+// PAGINATION
+nav.prev-next-posts {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    
+    & a{
+        color: var(--light-background);
+        text-decoration: none;
+        &:hover{
+            color: var(--smooth-white);
+        }
+    }
+}
+.next-posts-link:empty, .prev-posts-link:empty{
+    display: none;
+}
+//MEDIA QUERIES
+
+@media only screen and (max-width: 800px) {
+    .posts{
+        padding: 1rem 1rem;
+        &.squared{
+            margin: 0 auto;
+            display: grid;
+            grid-gap: 2rem 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            & .post{
+                flex-direction: column;
+                min-height: 100%;
+                &__teaser{
+                    margin-left: 0;
+                    & h2{
+                        text-align: center;
+                        font-size: 1.2rem;
+                        line-height: initial;
+                        color: var(--text-color);
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 600px){
+    .display--switch{
+        display: none;
+    }
+    .posts{
+        padding: 1rem 1rem;
+        &.squared{
+            // PUT FLEX BACK
+            display: flex;
+            & .post{
+                flex-direction: column;
+                min-height: 100%;
+                &__teaser{
+                    margin-left: 0;
+                    & h2{
+                        text-align: center;
+                        font-size: 1.2rem;
+                        line-height: initial;
+                        color: var(--text-color);
+                    }
+                }
+            }
+        }
+    }
+}
