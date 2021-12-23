@@ -14,6 +14,8 @@ article{
 .enlighter-default{
     &.enlighter-t-monokai {
         background-color: #212121;
+        padding: 1rem 0!important;
+        margin: 1rem 0 !important;
     }
     & span{
         font-family: 'Consolas', monospace !important;
@@ -65,11 +67,11 @@ article{
     animation: copyopacity 200ms ;
 }
 // END OF CODE BLOCK STYLE
+article section{
+    padding: 0 .4rem;
+}
 // Animation on "copy" button click
 @keyframes copyopacity{
     from {opacity: 0;}
     to {opacity: 1;}
-}
-.enlighter-btn-website, .enlighter-btn-raw, .enlighter-btn-window {
-    display: none !important;
 }

@@ -14,15 +14,18 @@
         background:var(--text-selection-background);
     }
 }
-body {
-  background-color: var(--background-color);
-  color: var(--text-color);
-}
 h1, h2, h3, h4, h5, h6{
   font-family: 'Roboto', sans-serif;
 }
 h2{
   font-size: clamp(1rem, 1.5rem, 2rem);
+}
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+.content{
+  padding: 1rem 2rem;
 }
 .container{
     max-width: 50rem;

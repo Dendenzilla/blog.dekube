@@ -35,7 +35,6 @@ get_header(); ?>
                         <?php echo wp_html_excerpt( get_the_title(), 45, '...');?>
                         </a>
                         </h2>
-                        <div class="technos">
                             <?php get_template_part( 'partials/technos' ); ?>
                         <a href="<?php echo get_permalink(); ?>" rel="noopener noreferrer">
                             <p class="post__excerpt"><?php echo wp_html_excerpt( get_the_excerpt(), 155, '...');?></p>

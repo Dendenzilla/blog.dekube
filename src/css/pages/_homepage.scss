@@ -18,7 +18,6 @@
 .posts{
     display: flex;
     flex-wrap: wrap;
-    padding: 1rem 2rem;
     visibility: hidden;
     // Link to single.php
     & a{
@@ -82,32 +81,6 @@
             & p.post__excerpt{
                 background-size:100% 3px;
             }
-            // & span{
-            //     &.tidbit{
-            //         background:conic-gradient(at bottom left, deeppink, cyan);
-            //         background-clip: text;
-            //     }
-            //     &.article{
-            //         background:conic-gradient(at top right, rgb(6, 148, 6), rgb(0, 153, 255));
-            //         background-clip: text;
-            //     }
-            //     background-size: 100% 100px;
-            //     background-repeat: no-repeat;
-                
-            //     color:transparent;
-            // }
-            // & i.css{
-            //     color:#27a0d4;
-            // }
-            // & i.html{
-            //     color:#e25f32;
-            // }
-            // & i.js{
-            //     color:#EAD41C;
-            // }
-            // & i.wordpress{
-            //     color:#1f6f93;
-            // }
         }
     }
 }
@@ -131,6 +104,9 @@ nav.prev-next-posts {
 //MEDIA QUERIES
 
 @media only screen and (max-width: 800px) {
+    .content{
+        padding: 1rem;
+    }
     .posts{
         padding: 1rem 1rem;
         &.squared{
