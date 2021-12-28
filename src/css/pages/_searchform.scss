@@ -22,9 +22,12 @@
         }
         &:placeholder-shown{
             border-bottom: 3px solid var(--deepest-text-color);
-            & +button i{
-                color:var(--deep-text-color);
-            }
+            & +button{
+                cursor:default;
+                & i{
+                    color:var(--deep-text-color);
+                }
+            } 
         }
         &:focus{
             border-bottom: 3px solid var(--smooth-white);
@@ -36,7 +39,9 @@
         height: 100%;
         line-height: 2rem;
         position: relative;
+        margin-right: 1rem;
         z-index: 999999;
+        cursor:pointer;
         & i{
             color:var(--smooth-white);
         }

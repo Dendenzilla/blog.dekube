@@ -14,8 +14,8 @@ $( document ).ready(function() {
         setTimeout(
             function() 
             {
-                $('.enlighter-btn-copy').delay(300).removeClass('alert--copied');
-            }, 300);
+                $('.enlighter-btn-copy').delay(600).removeClass('alert--copied');
+            }, 1000);
     })
 });
 

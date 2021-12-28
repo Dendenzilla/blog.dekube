@@ -23,7 +23,9 @@
             </div>
             <div class="settings">
                 <?php get_search_form(); ?>
-                <p>☻</p>
+                <p id="theme-switcher">
+                    <i class="fa-lightbulb far"></i>
+                </p>
             </div>
         </div>
     </div>

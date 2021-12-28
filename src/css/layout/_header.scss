@@ -2,7 +2,7 @@
     max-width: 70rem;
     margin: 1rem auto;
     height: 4rem;
-    color: white;
+    color: var(--smooth-white);
     user-select: none;
     &__container{
         display: flex;
@@ -21,8 +21,12 @@
     & .settings > *, .navigation > *{
         display: inline-block;
     }
-    & .fa-search{
-        padding-right: 2rem;
+    & #theme-switcher{
+        color:var(--deep-text-color);
+        cursor:pointer;
+        &:hover{
+            color:var(--smooth-white);
+        }
     }
 }
 @media only screen and (max-width: 600px){

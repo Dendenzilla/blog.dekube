@@ -13,9 +13,14 @@ article{
 // CODE BLOCK STYLE
 .enlighter-default{
     &.enlighter-t-monokai {
-        background-color: #212121;
+        background-color: var(--codeblock-background-darker);
         padding: 1rem 0!important;
         margin: 1rem 0 !important;
+        overflow-x: scroll !important;
+        overflow-y: hidden !important;
+        & + pre + .enlighter-default{
+            margin: 2rem 0 !important;
+        }
     }
     & span{
         font-family: 'Consolas', monospace !important;
@@ -28,8 +33,10 @@ article{
     margin: auto;
     font-size: .8rem !important;
     & .enlighter-toolbar {
-        bottom: 10px;
-        top: unset !important;
+        position: absolute;
+        top: 10px !important;
+        // right: 100px !important;
+        color: transparent;
     }
     & span.codeName{
         text-transform: uppercase;
@@ -47,24 +54,53 @@ article{
         font-weight: normal !important;
     }
     & .enlighter-x11 {
-        color: #fddb93 !important;
+        color: var(--enlighter-x11) !important;
     }
-    & .enlighter-x12 {
+    & .enlighter-k3{
+        color: var(--enlighter-k3) !important;
+    }
+    & .enlighter-k3 + .enlighter-x12{
+        color: var(--enlighter-k3-x12) !important;
+    }
+    & .enlighter-x12, .enlighter-m0 {
         font-style: normal !important;
+        color: var(--enlighter-x12) !important;
+    }
+    & .enlighter-x13{
+        color: var(--enlighter-x13) !important;
+    }
+    & .enlighter-x15{
+        color: var(--enlighter-x15) !important;
+    }
+    & .enlighter-text{
+        color: var(--smooth-white) !important;
     }
 }
 .enlighter-btn-copy::before {
-    content: "copied!";
+    content: "copied !";
     position: absolute;
-    right: -100%;
+    left: -160%;
     top: 0;
-    color: white;
-    width: 100%;
-    height: 100%;
     opacity: 0;
+    font-size: 1.5rem;
+    line-height: 100%;
+    background-image: linear-gradient(
+        45deg,
+        #CA4246 16.666%, 
+        #E16541 16.666%, 
+        #E16541 33.333%, 
+        #F18F43 33.333%, 
+        #F18F43 50%, 
+        #8B9862 50%, 
+        #8B9862 66.666%, 
+        #476098 66.666%, 
+        #476098 83.333%, 
+        #A7489B 83.333%);
+    background-clip: text;
+    color: transparent;
 }
 .enlighter-btn-copy.alert--copied::before {
-    animation: copyopacity 200ms ;
+    animation: copyopacity 1000ms ;
 }
 // END OF CODE BLOCK STYLE
 article section{
@@ -72,6 +108,7 @@ article section{
 }
 // Animation on "copy" button click
 @keyframes copyopacity{
-    from {opacity: 0;}
-    to {opacity: 1;}
+    0% {opacity: 0;}
+    75% {opacity: 1;}
+    100% {opacity: 0;}
 }

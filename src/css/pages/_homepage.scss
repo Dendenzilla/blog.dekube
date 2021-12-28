@@ -2,8 +2,9 @@
 .display--switch{
     text-align: right;
     padding: 1rem 2rem 0 0;
-    color: darken($secondary-color, 15%);
+    color: var(--deep-text-color);
     user-select: none;
+    margin-bottom: 1rem;
     & i{
         cursor: pointer;
     }
@@ -12,7 +13,7 @@
     }
     & i.selected{
         cursor:default;
-        color: white;
+        color: var(--smooth-white);
     }
 }
 .posts{
@@ -30,7 +31,7 @@
     &.squared{
         margin: 0 auto;
         display: grid;
-        grid-gap: 2rem 1rem;
+        grid-gap: 2rem;
         grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
         & .post{
             flex-direction: column;
@@ -40,7 +41,7 @@
                 margin-left: 0;
                 & h2{
                     padding-bottom: .5rem;
-                    text-align: center;
+                    text-align: justify;
                     font-size: 1.2rem;
                     line-height: initial;
                     color: var(--text-color);
@@ -57,7 +58,7 @@
         border-radius: .2rem;
         position: relative;
         transition: .1s all ease-in-out;
-        padding-bottom: 1.4rem;
+        margin-bottom: 2.4rem;
         &__teaser{
             color:var(--smooth-white);
             font-size: 1.2rem;
@@ -112,7 +113,7 @@ nav.prev-next-posts {
         &.squared{
             margin: 0 auto;
             display: grid;
-            grid-gap: 2rem 1rem;
+            grid-gap: 3rem 2rem;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             & .post{
                 flex-direction: column;
