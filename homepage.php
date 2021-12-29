@@ -27,21 +27,7 @@ get_header(); ?>
             <?php if ($query-> have_posts()) : ?>
             <?php while ($query->have_posts()) : $query->the_post(); ?>
             <!-- POST STRUCTURE -->
-            
-                <div class="post">
-                    <div class="post__teaser">
-                        <h2>
-                        <a href="<?php echo get_permalink(); ?>" rel="noopener noreferrer">
-                        <?php echo wp_html_excerpt( get_the_title(), 45, '...');?>
-                        </a>
-                        </h2>
-                            <?php get_template_part( 'partials/technos' ); ?>
-                        <a href="<?php echo get_permalink(); ?>" rel="noopener noreferrer">
-                            <p class="post__excerpt"><?php echo wp_html_excerpt( get_the_excerpt(), 155, '...');?></p>
-                        </a>
-                    </div>
-                </div>
-            
+                <?php get_template_part( 'partials/postloop' ); ?>
             <!-- END OF POST -->
             <?php endwhile; ?>
             <?php if ($query->max_num_pages > 1) : // custom pagination  ?>

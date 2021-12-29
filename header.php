@@ -34,4 +34,11 @@
     <div class="container">
         <div class="content">
         <!-- LOADER -->
-        <div class="lds-facebook"><div></div><div></div><div></div></div>
+        <div class="loader_container">
+            <svg class="loader" width="10vh" height="10vh" viewBox="0 0 400 800">
+                <path d="M 200 600 L 0 500 L 0 200 L 200 100 L 400 200 L 400 500 L 200 600 L 200 300 L 0 200"
+                fill="none" stroke-width="6" />
+                <path d="M 200 600 L 0 500 L 0 200 L 200 100 L 400 200 L 400 500 L 200 600 L 200 300 L 400 200"
+                fill="none"  stroke-width="6" />
+            </svg>
+        </div>

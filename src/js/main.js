@@ -18,7 +18,7 @@ $(".display--switch > i").click(function(){
 if (localStorage.getItem("theme") == 'Light'){
     $('html').attr("data-theme", "light");
     $(".posts").addClass('reveal');
-    $('.lds-facebook').addClass('hidden');
+    $('.loader_container').addClass('hidden');
 }
 // Website theme switcher
     $('#theme-switcher').click(function(){
@@ -42,9 +42,9 @@ $( document ).ready(function() {
         // then we hide the loader and show the posts
         $(".display--switch > i").toggleClass('selected');
         $(".posts").addClass('squared reveal');
-        $('.lds-facebook').addClass('hidden');
+        $('.loader_container').addClass('hidden');
     } else{
         $(".posts").addClass('reveal');
-        $('.lds-facebook').addClass('hidden');
+        $('.loader_container').addClass('hidden');
     }
 });
